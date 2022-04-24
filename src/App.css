@@ -4,17 +4,12 @@ div.week {
 
 .weather-app {
   max-width: 600px;
-  background-color: rgba(3, 87, 117, 0.4);
-  border-radius: 16px;
+  border: gray solid;
+  border-radius: 4px;
   padding: 40px;
-  box-shadow: 0px 30px 50px rgba(0 0 0/80%);
-  color: #fff;
+  color: black;
   margin: 30px;
   display: block;
-}
-
-.city-date {
-  padding-left: 20px;
 }
 
 p {
@@ -23,20 +18,25 @@ p {
 
 .daily-forecast {
   text-align: center;
-  border-radius: 16px;
-  background-color: rgba(3, 87, 117, 0.3);
-  box-shadow: 0px 30px 50px rgba(0 0 0 / 80%);
+  border: gray solid;
+  border-radius: 4px;
   padding: 30px;
 }
 
 img {
   display: inline;
 }
+
 .float-left {
   float: left;
 }
 
-.additional-info {
+.additional-result ul {
   font-size: 18px;
-  list-style-type: none;
+  list-style: none;
+}
+
+.search-result ul {
+  font-size: 30px;
+  list-style: none;
 }
