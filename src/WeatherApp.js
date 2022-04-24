@@ -4,12 +4,19 @@ import axios from "axios";
 
 export default function WeatherApp() {
   const [city, setCity] = useState();
+  const [temperature, setTemperature] = useState();
+
+  function displayResult(response) {
+    setTemperature(response.data.main.temp);
+  }
 
   function handleSubmit(event) {
     event.preventDefault();
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q${city}&appid=80f710d0fa6ebf8b91a4584a907a8eb6&units=metric`;
+    axios.get(apiUrl).then(displayResult);
   }
 
-  function displayResult(event) {
+  function updateCity(event) {
     setCity(event.target.value);
   }
 
@@ -23,7 +30,7 @@ export default function WeatherApp() {
             placeholder="Type a city..."
             autoFocus="on"
             autoComplete="off"
-            onChange={displayResult}
+            onChange={updateCity}
           />
           <button className="btn btn-secondary" type="submit">
             Search
@@ -33,7 +40,7 @@ export default function WeatherApp() {
       <div className="row">
         <div className="col search-result">
           <ul>
-            <li>City</li>
+            <li>{city}</li>
             <li>Last updated:</li>
           </ul>
         </div>
@@ -43,7 +50,7 @@ export default function WeatherApp() {
           <div className="clear-fix">
             <img src="#" alt="weather icon" className="float-left" />
             <div>Weather Description</div>
-            <div className="float-left">Temperature 10°C</div>
+            <div className="float-left">{temperature}°C</div>
           </div>
         </div>
 
