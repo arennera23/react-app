@@ -62,6 +62,7 @@ export default function WeatherApp() {
           </ul>
         </div>
       </div>
+      <div className="daily-forecast">Daily Forecast</div>
     </div>
   );
 }
