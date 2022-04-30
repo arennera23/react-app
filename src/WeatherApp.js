@@ -22,9 +22,9 @@ export default function WeatherApp() {
       <div className="row">
         <div className="col search-result mt-3">
           <ul>
-            <li>Tokyo</li>
-            <li>Last updated:</li>
-            <li>Clear sky</li>
+            <li className="city-name">Tokyo</li>
+            <li className="date">Last updated:</li>
+            <li className="weather-description">Clear sky</li>
           </ul>
         </div>
       </div>
@@ -34,7 +34,6 @@ export default function WeatherApp() {
             <img
               src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
               alt="weather icon"
-              className="float-left"
             />
             <span className="temperature">6</span>
             <span className="unit">°C</span>
