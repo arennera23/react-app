@@ -1,28 +1,11 @@
 import React, { useState } from "react";
-import "./App.css";
+import "./WeatherApp.css";
 import axios from "axios";
 
 export default function WeatherApp() {
-  const [city, setCity] = useState();
-  const [temperature, setTemperature] = useState();
-
-  function displayResult(response) {
-    setTemperature(response.data.main.temp);
-  }
-
-  function handleSubmit(event) {
-    event.preventDefault();
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q${city}&appid=80f710d0fa6ebf8b91a4584a907a8eb6&units=metric`;
-    axios.get(apiUrl).then(displayResult);
-  }
-
-  function updateCity(event) {
-    setCity(event.target.value);
-  }
-
   return (
-    <div className="Weather container">
-      <form onSubmit={handleSubmit}>
+    <div className="weather-app">
+      <form>
         <div className="input-group mb3">
           <input
             className="form-control"
@@ -30,30 +13,33 @@ export default function WeatherApp() {
             placeholder="Type a city..."
             autoFocus="on"
             autoComplete="off"
-            onChange={updateCity}
           />
-          <button className="btn btn-secondary" type="submit">
+          <button className="btn btn-primary" type="submit">
             Search
           </button>
         </div>
       </form>
       <div className="row">
-        <div className="col search-result">
+        <div className="col search-result mt-3">
           <ul>
-            <li>{city}</li>
+            <li>Tokyo</li>
             <li>Last updated:</li>
+            <li>Clear sky</li>
           </ul>
         </div>
       </div>
       <div className="row">
         <div className="col-6">
-          <div className="clear-fix">
-            <img src="#" alt="weather icon" className="float-left" />
-            <div>Weather Description</div>
-            <div className="float-left">{temperature}°C</div>
+          <div className="clearfix">
+            <img
+              src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
+              alt="weather icon"
+              className="float-left"
+            />
+            <span className="temperature">6</span>
+            <span className="unit">°C</span>
           </div>
         </div>
-
         <div className="col-6 additional-result">
           <ul>
             <li>Humidity: 98%</li>
