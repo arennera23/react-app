@@ -49,3 +49,7 @@ p {
   list-style: none;
   padding: 0;
 }
+
+.weatherApp a {
+  text-decoration: none;
+}
