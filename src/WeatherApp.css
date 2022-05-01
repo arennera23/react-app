@@ -1,4 +1,4 @@
-.weather-app {
+.weatherApp {
   max-width: 600px;
   border: rgb(92, 99, 105) solid 1px;
   border-radius: 4px;
@@ -24,17 +24,17 @@ p {
   padding: 30px;
 }
 
-.weather-app img {
+.weatherApp img {
   height: 64px;
   float: left;
 }
-.weather-app .temperature {
+.weatherApp .temperature {
   color: black;
   font-size: 50px;
   line-height: 64px;
   margin-left: 5px;
 }
-.weather-app .unit {
+.weatherApp .unit {
   position: relative;
   top: -24px;
 }
