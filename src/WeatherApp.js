@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./WeatherApp.css";
+import FormattedDate from "./FormattedDate";
 import axios from "axios";
 
 export default function WeatherApp() {
@@ -9,6 +10,7 @@ export default function WeatherApp() {
     console.log(response.data);
     setWeatherData({
       ready: true,
+      date: new Date(response.data.dt * 1000),
       temperature: response.data.main.temp,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
@@ -40,7 +42,9 @@ export default function WeatherApp() {
           <div className="col search-result mt-3">
             <ul>
               <li className="city-name">Tokyo</li>
-              <li className="date">Date</li>
+              <li className="date">
+                <FormattedDate date={weatherData.date} />
+              </li>
               <li className="weather-description text-capitalize">
                 {weatherData.description}
               </li>
