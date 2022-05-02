@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./WeatherApp.css";
 import WeatherSearchResult from "./WeatherSearchResult";
+import WeatherForecast from "./WeatherForecast";
 import axios from "axios";
 
 export default function WeatherApp(props) {
@@ -8,7 +9,6 @@ export default function WeatherApp(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
 
   function handleResponse(response) {
-    console.log(response.data.weather[0].icon);
     setWeatherData({
       ready: true,
       city: response.data.name,
@@ -57,6 +57,7 @@ export default function WeatherApp(props) {
           </div>
         </form>
         <WeatherSearchResult result={weatherData} />
+        <WeatherForecast icon={weatherData} />
       </div>
     );
   } else {

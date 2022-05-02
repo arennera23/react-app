@@ -17,11 +17,18 @@ p {
   max-width: 600px;
 }
 
-.daily-forecast {
+.WeatherForecast {
   text-align: center;
   border: rgb(92, 99, 105) solid 1px;
   border-radius: 4px;
   padding: 30px;
+}
+
+.DailyForecast {
+  border: rgb(92, 99, 105) solid 1px;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 20px;
 }
 
 .weatherApp img {
