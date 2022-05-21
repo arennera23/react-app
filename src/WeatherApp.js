@@ -11,6 +11,7 @@ export default function WeatherApp(props) {
   function handleResponse(response) {
     setWeatherData({
       ready: true,
+      coordinates: response.data.coord,
       city: response.data.name,
       date: new Date(response.data.dt * 1000),
       temperature: response.data.main.temp,
@@ -57,7 +58,10 @@ export default function WeatherApp(props) {
           </div>
         </form>
         <WeatherSearchResult result={weatherData} />
-        <WeatherForecast icon={weatherData} />
+        <WeatherForecast
+          icons={weatherData.weatherIcon}
+          coordinates={weatherData.coordinates}
+        />
       </div>
     );
   } else {
